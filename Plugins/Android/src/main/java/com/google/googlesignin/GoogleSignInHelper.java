@@ -107,8 +107,9 @@ public class GoogleSignInHelper {
    * @param webClientId        - the web client id of the backend server
    *                           associated with this application.
    * @param requestAuthCode    - true if a server auth code is needed. This also
-   *                           requires the web
-   *                           client id to be set.
+   *                           requires the web client id to be set.
+   * @param skipConvertingAuthCodeToToken    - true if if you want to retrieve the auth code without converting it to an access token.
+   *                           This is useful if you want to authenticate via an external service that requires the auth code.
    * @param forceRefreshToken  - true to force a refresh token when using the
    *                           server auth code.
    * @param requestEmail       - true if email address of the user is requested.
@@ -128,6 +129,7 @@ public class GoogleSignInHelper {
           boolean useGamesConfig,
           String webClientId,
           boolean requestAuthCode,
+          boolean skipConvertingAuthCodeToToken,
           boolean forceRefreshToken,
           boolean requestEmail,
           boolean requestIdToken,

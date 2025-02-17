@@ -40,6 +40,7 @@ namespace Google.Impl {
 			GoogleSignIn_Configure(SelfPtr(), configuration.UseGameSignIn,
 										configuration.WebClientId,
 										configuration.RequestAuthCode,
+										configuration.SkipConvertingAuthCodeToToken,
 										configuration.ForceTokenRefresh,
 										configuration.RequestEmail,
 										configuration.RequestIdToken,
@@ -105,14 +106,15 @@ namespace Google.Impl {
 
 	static bool GoogleSignIn_Configure(HandleRef googleSignInHelper,
 		bool useGameSignIn, string webClientId,
-		bool requestAuthCode, bool forceTokenRefresh, bool requestEmail,
-		bool requestIdToken, bool hidePopups, string[] additionalScopes,
+		bool requestAuthCode, bool skipConvertingAuthCodeToToken, bool forceTokenRefresh,
+		bool requestEmail, bool requestIdToken, bool hidePopups, string[] additionalScopes,
 		int scopeCount, string accountName)
 	{
 		GoogleSignInHelper.CallStatic("configure",
 			useGameSignIn,
 			webClientId,
 			requestAuthCode,
+			skipConvertingAuthCodeToToken,
 			forceTokenRefresh,
 			requestEmail,
 			requestIdToken,
