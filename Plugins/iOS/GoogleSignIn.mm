@@ -179,7 +179,7 @@ void GoogleSignIn_EnableDebugLogging(void *unused, bool flag) {
  * It is here to make the API between Android and iOS uniform.
  */
 bool GoogleSignIn_Configure(void *unused, bool useGameSignIn,
-                            const char *webClientId, bool requestAuthCode,
+                            const char *webClientId, bool requestAuthCode, bool skipConvertingAuthCodeToToken,
                             bool forceTokenRefresh, bool requestEmail,
                             bool requestIdToken, bool hidePopups,
                             const char **additionalScopes, int scopeCount,

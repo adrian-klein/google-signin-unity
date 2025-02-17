@@ -250,8 +250,8 @@ namespace Google.Impl {
 	[DllImport(DllName)]
 	static extern bool GoogleSignIn_Configure(HandleRef self,
 		bool useGameSignIn, string webClientId,
-		bool requestAuthCode, bool forceTokenRefresh, bool requestEmail,
-		bool requestIdToken, bool hidePopups, string[] additionalScopes,
+		bool requestAuthCode, bool skipConvertingAuthCodeToToken, bool forceTokenRefresh,
+		bool requestEmail, bool requestIdToken, bool hidePopups, string[] additionalScopes,
 		int scopeCount, string accountName);
 
 	[DllImport(DllName)]
