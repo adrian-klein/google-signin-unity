@@ -42,7 +42,8 @@ namespace Google {
     /// </summary>
     public bool RequestAuthCode = false;
     /// <summary>Set to true if you want to retrieve the auth code without converting it to an access token.<br/>
-    /// This is useful if you want to authenticate via an external service that requires the auth code.
+    /// This is useful if you want to authenticate via an external service that requires the auth code. <br/>
+    /// Does nothing, if <see cref="RequestAuthCode"/> is false.
     /// </summary>
     public bool SkipConvertingAuthCodeToToken = false;
     /// <summary>Set to true to request to reset the refresh token.

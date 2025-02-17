@@ -120,13 +120,12 @@ namespace Google.Impl
           context.Response.OutputStream.Write(Encoding.UTF8.GetBytes("Can close this page"));
           context.Response.Close();
 
-          if (configuration.SkipConvertingAuthCodeToToken)
+          if (configuration.RequestAuthCode && configuration.SkipConvertingAuthCodeToToken)
           {
-            var user = new GoogleSignInUser();
-            if(configuration.RequestAuthCode)
-              user.AuthCode = code;
+            var codeOnlyUser = new GoogleSignInUser();
+            codeOnlyUser.AuthCode = code;
             
-            Result = user;
+            Result = codeOnlyUser;
             Status = GoogleSignInStatusCode.SUCCESS;
             return;
           }
