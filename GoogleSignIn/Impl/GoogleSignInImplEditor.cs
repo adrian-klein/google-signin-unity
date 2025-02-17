@@ -102,7 +102,6 @@ namespace Google.Impl
       httpListener.GetContextAsync().ContinueWith(async(task) => {
         try
         {
-          Debug.Log(task);
           var context = task.Result;
           var queryString = context.Request.Url.Query;
           var queryDictionary = System.Web.HttpUtility.ParseQueryString(queryString);
