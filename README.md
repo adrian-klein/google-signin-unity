@@ -1,3 +1,18 @@
+# Forked for more options
+
+### Easy import configuration
+
+After import, you now have to add a compile directive `ENABLE_NATIVE_GOOGLE_SIGNIN` to all projects where you want to use this package.
+
+### Option to output actual AuthCode
+
+Some external service providers like Playfab require an `AuthCode` or `ServerAuthCode` that has not been '_consumed_', which happens when the `AuthCode` is converted to the `IdToken`.
+
+To prevent this conversion, the GoogleSignInConfiguration provides a new option: `SkipConvertingAuthCodeToToken`.
+
+This only works if `RequestAuthCode` is also set to true!
+
+
 # Forked to upgrade base library to newer version
 
 https://developer.android.com/identity/sign-in/legacy-gsi-migration
@@ -27,13 +42,13 @@ Also, this new system seem like it did not support email hint. And now require W
 
 Tested in unity 2021.3.21 and unity 6000.0.5
 
-Add UPM dependency with branch tag `https://github.com/Thaina/google-signin-unity.git#newmigration`
+Add UPM dependency with branch tag `https://github.com/adrian-klein/google-signin-unity.git#newmigration`
 
 ```json
 {
   "dependencies": {
     "com.google.external-dependency-manager": "https://github.com/googlesamples/unity-jar-resolver.git?path=upm",
-    "com.google.signin": "https://github.com/Thaina/google-signin-unity.git#newmigration",
+    "com.google.signin": "https://github.com/adrian-klein/google-signin-unity.git#newmigration",
     ...
   }
 }
