@@ -1,3 +1,4 @@
 {
-	"name": "GoogleSignin"
+	"name": "GoogleSignin",
+	"defineConstraints": ["ENABLE_NATIVE_GOOGLE_SIGNIN"]
 }
